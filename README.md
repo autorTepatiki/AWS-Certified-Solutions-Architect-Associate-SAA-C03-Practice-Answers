@@ -14,7 +14,7 @@ You have a fleet of 10 EC2 instances split across two availability zones, provis
 
 3 / 64
 You need to configure 100 EC2 instances for monitoring as part of completing a project. You have been asked to gather metrics on memory utilization. What do you need to do assuming all 100 EC2 instances are t3.large size? (choose one)
-. Install the CWAgent
+- Install the CWAgent
 
 
 4 / 64
