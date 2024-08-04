@@ -1,5 +1,5 @@
 # ⬆️ Amazon Web Services Certified (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests Answers
-These are my own responses from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests #1 & #2 answers.
+These are my own and verified answers from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests #1 & #2.
 
 # Verified Practice exam #1 answers
 
