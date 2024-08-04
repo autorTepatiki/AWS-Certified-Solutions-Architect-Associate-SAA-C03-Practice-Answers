@@ -410,6 +410,11 @@ You have added a rule to a NACL which allows traffic through to a VPC subnet but
 -	Make sure the NACL is assigned to the correct subnet
 
 60 / 61
+The animals4life business has a head office in Brisbane and a new satellite office in London. Both offices are connected to a VPC in that same region using a Site-to-Site VPN. You have a new requirement to connect the two VPCs so that communication can occur between them, but also that the Brisbane office can use the London VPC and the London office can use the Australian VPC. What should you suggest?
+-	A transit gateway linking the London and Australian VPCs
+
+
+61 / 61
 
 A member of your clients IT team has suggested that enabling Multi-AZ on a MySQL RDS instance will help improve performance. You have been asked to comment, what should you say?
 -	Multi-AZ only helps with availability
