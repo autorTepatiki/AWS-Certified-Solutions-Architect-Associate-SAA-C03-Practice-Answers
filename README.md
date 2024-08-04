@@ -1,7 +1,7 @@
 # ⬆️ Amazon Web Services Certified (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests Answers
-These are my own notes from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests Answers.
+These are my own responses from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests #1 & #2 answers.
 
-# Practice exam #1 responses of my own.
+# Verified Practice exam #1 answers
 
 1 / 64
 You are designing infrastructure for a bespoke data analysis application. One of the volumes will host a small temporary data base and require high IOPS. What storage should you suggest?
@@ -269,6 +269,148 @@ You need configure an EC2 instance so it can only be accessed using SSH from IP 
 64 / 64
 Your developers are refactoring a legacy application into a series of services. At this stage most of the services are long running processes using chunks of code from the original application. What architecture components would you recommend to make best use of AWS services?
 -	Configure the service to Docker containers and deploy with ECS
+
+# Verified Practice exam #2 answers
+
+27 / 61
+You have been asked to suggest an AWS product which provides storage which can be mounted on linux instances, supports POSIX type permissions and can be used by multiple instances at the same time. Which option should you suggest?
+-	EFS
+
+28 / 61
+You have been asked to design encryption for a health care related data set. The requirement is that data be transferred to S3 in an encrypted way. And when on S3 it must be encrypted. S3 Full administrators must not be able to access the data contents, but must be able to manage that data. Analysis staff must be able to access data, but not adjust encryption in any way. The solution should use the least number of services to meet the objectives and have the least admin overhead. What should you suggest ?
+-	SSE-KMS (optionally but more complex, SSE-C)
+
+29 / 61
+You have recently enhanced an application by using an auto-scaling-group and an application load balancer. Users have reported that the application is constantly logging customers out and losing progress. What is a potential fix for this behaviour ?
+-	Enable session stickiness
+
+30 / 61
+You are having problems establishing a Dynamic Site-to-Site VPN between AWS and a client site. Which of the following could be a potential reason?
+-	The Customer router cannot use BGP
+
+31 / 61
+You are launching an application which operates in a controversial area of industry and you are expecting internet based attacks. Your application runs inside a VPC, within an auto-scaling-group and uses an application load balancer. The hostname for the application www.dogsarebetterthancats.com uses an external DNS provider. How can you protect against DDOS attacks with this application?
+-	Purchase Shield Advanced
+
+32 / 61
+You have 4 VPC’s and need to configure AWS to allow communications between all 4 VPC. Which of the following options will meet that requirement and do so with as little configuration & ongoing admin overhead as possible (choose one)
+-	1 Transit Gateway
+
+33 / 61
+You are hosting a blog platform in AWS. The blog platform has been developed to use a MySQL 5.7 using the InnoDB storage. To get the best performance from your architecture, what AWS services would you use?
+-	EC2 instances and AWS RDS using Aurora
+
+34 / 61
+You are the solutions architect in charge of migrating a wordpress hosting business to AWS. They have several clients who consume significant resources. They have asked you to design a multi-instance storage solution for shared data the servers currently use Ubuntu Linux. Which product should you recommend ? (choose one)
+-	EFS (just storing, not considering the SQL engine)
+
+35 / 61
+You have configured S3 so that when a video file is uploaded, an event is generated. You need two processes to run independently when the video is uploaded, generating two different sizes and then adding a water mark. What service or combination of services would allow this process to take place?
+-	SNS + SQS + ASG
+
+36 / 61
+You have been alerted to suspect connections being attempted to 100 EC2 instances within an Auto-scaling-group from a group of external IP addresses. There is one range of IP addresses in a /24 network and another single IP address. What is the quickest way to block access to your EC2 instances from these IP addresses.
+-	NACL Inbound (and NOT SG inbound)
+
+37 / 61
+You are attempting to diagnose a networking problem within a VPC. You have an existing EC2 instance deployed in a subnet with a public IP address. This instance can be accessed from the public internet and it can access anything ON the public internet. You launch an additional EC2 instance in the same VPC subnet and cannot access it from the public internet. What could be a possible reason for this?
+-	The instance has no public IP address allocated
+
+38 / 61
+After deploying an HPC application across multiple EC2 instances you discover performance issues. Upon investigation you determine that network latency is the cause of the issues. What solution do you suggest to attempt to mitigate the performance issues?
+-	Place the EC2 instances in a single Cluster Placement Group
+
+39 / 61
+A local police force has asked you to help implement a solution for tracking police units. Every unit has a GPS tracker which transmits data every 60 seconds. You need to suggest a solution which can accept the data en-mass from all units in the country and allow multiple applications to read and process data in near realtime for different business and security functions. What should you suggest?
+-	Kinesis
+
+40 / 61
+You run an online commerce business which prints images on glass. You would like a long running process (2 weeks) to be initiated whenever an order arrives in a DynamoDB orders table. What AWS products should you use to ensure the most cost-effect solution?
+-	DynamoDB Streams, Lambda, Stepfunctions
+
+41 / 61
+An animal charity is launching a new campaign and needs a website. The content of the website will explain to users how the campaign works, and provide links to their existing financial partner who deals with charitable donations. This website will be promoted using social media platforms and many thousands of page impressions are expected per minute. What architecture would you recommend to satisfy the charities requirements while keeping costs as low as possible?
+-	Create an S3 bucket and enable static web hosting
+
+42 / 61
+You have been asked to migrate a system into the cloud in order to reduce the management overheads for your business. The system uses a shared NFS file system for common data used on multiple components of the system. To meet this requirement without major changes to the system what architecture would you recommend?
+-	Elastic File System (Amazon EFS)
+
+43 / 61
+A Database solution you are implementing requires high throughput and manages high IO workloads. It uses a collection of volumes ranging in size and requires performance which is independent of size. What volume type should you suggest ? (Choose one)
+-	IO1 (provisiones IOPS SSD)
+
+44 / 61
+You are designing a financial application which requires high IOPS capability on its storage. You have been asked which storage type to suggest. The storage needs to be mountable on an EC2 instances and accessible from one EC2 instance at a time. The data which is being stored is business critical and requires 25,000 IOPS at all times.
+-	EBS IO1
+
+45 / 61
+You have been asked by the maker of a popular game ‘catcraft’ to implement load balancing for their front end game infrastructure. The game doesn’t use HTTP or HTTPS instead a custom low latency protocol which runs over the top of TCP. The game is expected to be popular and whatever you implement needs to cope with 500,000 requests per second as a starting point and this is expected to scale rapidly. What should you suggested to distribute load over the front end servers
+-	NLB (network LB)
+
+46 / 61
+Which actions are required to make an EC2 instance publicly accessible on the IPv4 internet.. (Choose all that apply)
+-	An attached internet gateway + 0.0.0.0/0 + Public IP4 Address configured on the instance
+
+47 / 61
+An application within an architectre you designed 12 months ago is experiencing performance issues. The application runs on a T3.Large instance and uses a MariaDB RDS Multi-AZ database instance. The application is experiencing issues with database writes... and appears constrained. What is the most cost effective way of fixing this problem with no application changes ? (Choose one)
+-	Adjust the RDS Instance Size and/or storage type
+
+48 / 61
+You are designing an application which uses lambda as the provider of compute. The application is javascript, it loads from an S3 bucket and runs in the browser of customers. It needs to be able to communicate with AWS services such as DynamoDB and as required cause lambda functions to run. Which AWS Service can act as the middleman in this type of architecture? (Choose one)
+-	API Gateway
+
+49 / 61
+You are reviewing an architecture built in a new AWS account. The architecture centers around a Virtual Private Cloud (VPC). Which of the following statements best describes a VPC?
+-	A logically isolated network
+
+50 / 61
+You have been asked to create an EC2 instance with network interfaces in two separate subnets. What should your response be?
+-	Possible only if subnets are in the same AZ
+
+51 / 61
+A news organization uploads articles to S3 for internal use. Articles uploaded in the last month will be accessed by staff regularly, with articles older than 3 months are unlikely to be used again but should be archived. Which of the following solutions will keep storage costs as low as possible while meeting requirements?
+-	Configure an S3 lifecycle policy that will transition objects to the S3 Glacier storage class after 90 days
+
+52 / 61
+A client is launching a cat image sharing website called catagram. It needs a high performance, scalable, resilient and publically accessible location to store images of various sizes. The application needs to be able to provide time limited access to the objects to protect the rights of content owners. Which product should you select.
+-	S3
+
+53 / 61
+You have an on-premises active directory and have connected this network to an AWS VPC using a site-to-site VPN connection. You intend to perform a Workspaces Proof of Concept pilot. What do you need to do before deploying workspaces (choose one).
+-	Use AD Connector
+
+54 / 61
+A legacy linux application is running on 5 virtual servers on-premises and needs to be migrated to AWS. It uses multicast networking and this can’t be changed. How can this be migrated into AWS, are any special accomodations needed ?
+-	Build the servers within an ASG/LT, create an multicast network overlay internally within the OS networking.
+
+55 / 61
+Your business is merging with another company over the coming 12 months. Long term the plan is to create a new AWS account infrastructure and move into this for the new shared entity. Your business has 3000 staff, the other business has 2500. You have been asked to give the 2500 staff access to your AWS account as quickly as possible, while keeping the admin overhead low. What should you suggest?
+-	Use an IAM role
+
+56 / 61
+Assuming you have allocated a keypair when launching a public EC2 instance and have network connectivity .. which of the following ways are valid for logging into a linux EC2 instance
+-	Local SSH client using key authentication + EC2 Instance Connect
+
+57 / 61
+An application uses a worker pool architecture consisting of an auto-scaling-group which scales based on the length of an SQS Queue. Permissions to access the queue for work, and to write the output to S3 is provided via an instance role assigned at launch to the EC2 instances. Recently the length of the queue has started to increase as has EC2 costs. Jobs are getting processed, but you are experiencing additional errors. What could be the problem?
+-	No dead letter queue (to avoid invalid messages to be processed for ever)
+
+58 / 61
+A VPC you manage has a collection of 10 EC2 instances running across two AZs in two private subnets, with IPv4 addresses only. You need to make sure the instances have outgoing only access to the internet. What should you do?
+-	Deploy a NATGateway
+
+59 / 61
+You have added a rule to a NACL which allows traffic through to a VPC subnet but are finding that its not working as expected. What possible things should you investigate? (Choose all which apply)
+-	NACL rules are stateless make sure you have a rule for the response traffic
+-	NACL rules are processed in order, make sure there isn’t one with a lower number which is processed first
+-	Make sure the NACL is assigned to the correct subnet
+
+60 / 61
+
+A member of your clients IT team has suggested that enabling Multi-AZ on a MySQL RDS instance will help improve performance. You have been asked to comment, what should you say?
+-	Multi-AZ only helps with availability
+
 
 
 
