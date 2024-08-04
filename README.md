@@ -2,7 +2,7 @@
 
 ![logo](./logo.png)
 
-These are my own and verified answers from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests #1 & #2.
+These are my own and verified answers from A.Cantrill's (AWS Certified) Solutions Architect Associate (SAA-C03) Practice Tests #1 & #2. Available to enroll at https://learn.cantrill.io/ .
 
 # Verified Practice exam #1 answers
 
